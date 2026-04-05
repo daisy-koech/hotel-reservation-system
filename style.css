@@ -1,0 +1,162 @@
+:root {
+    --primary-blue: #1e318a;
+    --light-blue: #3b82f6;
+    --accent-yellow: #facc15;
+    --bg-light: #f9fafb;
+}
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--primary-blue);
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  background: var(--primary-blue);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.navbar a {
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    color: white;
+    font-weight: bold;
+}
+.navbar a:hover {
+    background: var(--accent-yellow);
+    color: #060606;
+    transform: scale(1.1);
+}
+
+.r-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#reservation-form label {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+#reservation-form input,
+#reservation-form select,
+#reservation-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#reservation-form textarea {
+  resize: none;
+}
+
+#btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent-yellow);
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+#btn:hover {
+  background: #eab308;
+  transform: scale(1.05);
+}
+
+.reservations {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: var(--primary-blue);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+.delete-btn {
+  background: red;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+}
+
+#contact {
+    background-color: #1e318a;  
+    color: white;
+    text-align: center;        
+    padding: 30px 15px;
+    border-top: 4px solid #ffcc00;
+}
+
+#contact h2 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+#contact a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #reservation-form input,
+  #reservation-form select,
+  #reservation-form textarea {
+    width: 100%;
+  }
+}

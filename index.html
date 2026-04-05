@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta name="description" content="Hotel reservation management system">
+        <title>Travellers' | Hotel</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#reservations">Reservations</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#contact">Contact</a>
+    </nav> 
+
+    <div class="r-container">
+        <h1>Hotel Reservation System</h1>
+
+        <form id="reservation-form">
+            <label for="fullName">Full Name: </label>
+            <input type="text" id="fullName" placeholder="Guest Name" required>
+        <br>
+            <label for="rooms" id="rooms">Room Type: </label>
+            <select id="room">
+                <option value="Rooms">Select Rooms</option>
+                <option value="Single-room">Single Room</option>
+                <option value="Double-room">Double Room</option>
+                <option value="Suite">Suite</option>
+            </select>
+
+            <br>
+
+            <label for="adults">Adults: </label>
+            <select id="adults">
+                <option value="">Select Adults</option>
+                <option value="1">1 adult</option>
+                <option value="2">2 adults</option>
+                <option value="3">3 adults</option>
+                <option value="4">4 adults</option>
+                <option value="5">5 adults</option>
+            </select>
+
+            <label for="children">Children: </label>
+            <select id="children">
+                <option value="">0 children</option>
+                <option value="1">1 child</option>
+                <option value="2">2 children</option>
+                <option value="3">3 children</option>
+            </select>
+        <br>
+            <label for="check-in">Check-in: </label>
+            <input type="date" class="date" required>
+            <label for="time"> Time: </label>
+            <input type="time" class="time" required>
+            <br>
+            <label for="check-out">Check-out: </label>
+            <input type="date" class="date" required>
+            <label for="time">Time: </label>
+            <input type="time" class="time" required>
+            <br>
+            <label for="special-requests">Special Requests: </label>
+            <br>
+            <textarea id="special-requests" rows="5" cols="20" placeholder="Any special requests?"></textarea>
+            <br>
+            <button type="submit" id="btn">Add Reservation</button>
+        </form>
+    </div>
+
+    <div id="reservations" class="reservations">
+        <h2>Reservations</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Room Type</th>
+                    <th>Check-in</th>
+                    <th>Check-out</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="reservation-list"></tbody>
+        </table>
+    </div>
+
+    <footer id="contact">
+              <h2>Contact Us</h2>
+               <p>
+                <a href="mailto:travellers.hotel@gmail.com">travellers.hotel@gmail.com</a>
+               </p>
+               <p>Phone: +2547 12 345 678</p>
+               <p>Location: 12, Oloo Street, Eldoret, Kenya</p>
+               <p>
+                <a href="https://www.google.com/maps" target="_blank">Directions to Travellers' Hotel</a>
+               </p>
+               <p>&copy; 2026 Travellers' | Hotel</p>
+    </footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
