@@ -113,7 +113,8 @@ tr:nth-child(even) {
 }
 
 .delete-btn {
-  background: red;
+  background: rgb(251, 0, 0);
+  font-size: bold;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -123,6 +124,7 @@ tr:nth-child(even) {
 
 .delete-btn:hover {
   transform: scale(1.1);
+  color: white;
 }
 
 #contact {

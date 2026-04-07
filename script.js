@@ -44,7 +44,7 @@ function displayReservations () {
         roomTypeTd.textContent = reservation.roomType;
 
         const occupancyTd = document.createElement("td");
-        occupancyTd.textContent = `Adults: ${reservation.adults}, Children: ${reservation.children}`;
+        occupancyTd.textContent = `Adults: ${reservation.adults},   Children: ${reservation.children}`;
 
         const checkInTd = document.createElement("td");
         checkInTd.textContent = reservation.checkIn;
@@ -59,6 +59,7 @@ function displayReservations () {
         const actionTd = document.createElement("td");
         const button = document.createElement("button");
         button.textContent = "Delete Reservation";
+        button.className = "delete-btn";
 
         button.addEventListener ("click", () => {
             reservations.splice(index, 1);
