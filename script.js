@@ -32,27 +32,50 @@ form.reset();
 });
 
 function displayReservations () {
-     reservationList.innerHTML = "";
+     reservationList.textContent = "";
 
     reservations.forEach((reservation, index) => {
-        const row = `
-        <tr>
-            <td>${reservation.fullName}</td>
-            <td>${reservation.roomType}</td>
-            <td>Adults: ${reservation.adults}, Children: ${reservation.children}</td>
-            <td>${reservation.checkIn}</td>
-            <td>${reservation.checkOut}</td>
-            <td>${reservation.requests || "None"}</td>
-            <td>
-                <button class="delete-btn" onClick="deleteReservation(${index})">Delete Reservation</button>
-            </td>
-        </tr>
-        `;
-        reservationList.innerHTML += row;
-    });
-}
+        const row = document.createElement("tr");
 
-function deleteReservation (index) {
-    reservations.splice(index, 1);
-    displayReservations();
+        const fullNameTd = document.createElement("td");
+        fullNameTd.textContent = reservation.fullName;
+
+        const roomTypeTd = document.createElement("td");
+        roomTypeTd.textContent = reservation.roomType;
+
+        const occupancyTd = document.createElement("td");
+        occupancyTd.textContent = `Adults: ${reservation.adults}, Children: ${reservation.children}`;
+
+        const checkInTd = document.createElement("td");
+        checkInTd.textContent = reservation.checkIn;
+
+        const checkOutTd = document.createElement("td");
+        checkOutTd.textContent = reservation.checkOut;
+
+        const requestsTd = document.createElement("td");
+        requestsTd.textContent = reservation.requests;
+
+
+        const actionTd = document.createElement("td");
+        const button = document.createElement("button");
+        button.textContent = "Delete Reservation";
+
+        button.addEventListener ("click", () => {
+            reservations.splice(index, 1);
+            displayReservations();
+        })
+
+        actionTd.appendChild(button);
+
+    row.append(fullNameTd);
+    row.append(roomTypeTd);
+    row.append(occupancyTd);
+    row.append(checkInTd);
+    row.append(checkOutTd);
+    row.append(requestsTd);
+    row.append(actionTd);
+
+    reservationList.append(row);
+
+});
 }
